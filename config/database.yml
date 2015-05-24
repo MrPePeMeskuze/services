@@ -6,3 +6,11 @@ production:
   username: root
   password:
   host: 127.0.0.1
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: services
+  pool: 5
+  username: root
+  password:
+  host: 127.0.0.1
