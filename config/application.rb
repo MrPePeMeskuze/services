@@ -1,5 +1,5 @@
 require File.expand_path('../boot', __FILE__)
-config.assets.precompile += %w[admin/active_admin.css admin/active_admin.js]
+
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
