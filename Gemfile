@@ -41,4 +41,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 # Gemfile in Rails >= 4
   gem 'activeadmin', github: 'activeadmin'
 # Дивайс
-  gem 'devise'
+  gem 'devise', github: 'plataformatec/devise'
