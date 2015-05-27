@@ -40,3 +40,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # Дивайс
   gem 'devise', github: 'plataformatec/devise'
+#для heroku стилей и js
+  gem 'rails_12factor', group: :production
