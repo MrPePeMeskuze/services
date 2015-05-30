@@ -1,10 +1,23 @@
-<img src="/images/calcul.png" alt="Раздел в разработке" class="main-development-img">
-<div class="main-development">
-  <h2>
-    Упс!<br /><br />
-    <div style="margin-top:-10px">Раздел в разработке</div>
-  </h2><br />
-  <p>
-    Попробуйте зайти в данный раздел позднее.
-  </p>
-</div>
+<!DOCTYPE html>
+<html>
+  <%= render 'layouts/head' %>
+  <body>
+    <div id="all">
+      <%= render 'layouts/header' %>
+      <div class="main center">
+        <img src="/images/calcul.png" alt="Раздел в разработке" class="main-development-img">
+        <div class="main-development">
+          <h2>
+            Упс!<br /><br />
+            <div style="margin-top:-10px">Раздел в разработке</div>
+          </h2><br />
+          <p>
+            Попробуйте зайти в данный раздел позднее.
+          </p>
+        </div>
+      </div>
+      <div class="hFooter"></div>
+    </div>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
