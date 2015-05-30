@@ -1,84 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script type="text/javascript" src="/js/fancybox/lib/jquery-1.10.1.min.js"></script>
-    <!--fancybox-->
-      <!-- Add mousewheel plugin (this is optional) -->
-      <script type="text/javascript" src="/js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<head>
+  <title>The change you wanted was rejected (422)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
 
-      <!-- Add fancyBox main JS and CSS files -->
-      <script type="text/javascript" src="/js/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
-      <link rel="stylesheet" type="text/css" href="/js/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
-    <!--fancybox end-->
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext,greek-ext,greek,vietnamese' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,500italic,700,700italic,900&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
-    <meta charset="utf-8">
-    <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <div id="all">
-      <div class="top-panel">
-        <div class="top-panel-inner center">
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
 
-          <input type="text" placeholder="Поиск" class="search" />
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
 
-          <div class="authorization">
-            <input type="text" placeholder="Логин" class="logon">
-            <input type="password" placeholder="Пароль" class="logon">
-            <a class="btn" href="#">Войти </a>
-          </div>
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
 
-        </div>
-      </div>
-      <div class="header">
-        <div class="head-content clearfix center">
-          <div class="float">
-            <a href="/">
-              <img src="/images/logo.png" alt="Логотип">
-            </a>
-          </div>
-          <div class="head-contacts">
-            8 800 555-22-53<br/>
-            <span>8 495 540-52-37</span><br />
-            <a href="mailto:info@ardi-typography.ru">info@ardi-typography.ru</a>
-          </div>
-          <div class="menu-top">
-            <ul>
-              <li><%= link_to "Портфолио", '#' %></li>
-              <li><%= link_to "Услуги", '#' %></li>
-              <li><%= link_to "Новости", '#' %></li>
-              <li><%= link_to "Контакты",   contacts_path %></li>
-              <li><%= link_to "О компании", about_path %></li>
-              <li><%= link_to "Sign up", signup_path %></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="main center">
-        <img src="/images/calcul.png" alt="Раздел в разработке" class="main-development-img">
-        <div class="main-development">
-          <h2>
-            Упс!<br /><br />
-            <div style="margin-top:-10px">Раздел в разработке</div>
-          </h2><br />
-          <p>
-            Попробуйте зайти в данный раздел позднее.
-          </p>
-        </div>
-      </div>
-      <div class="hFooter"></div>
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/422.html -->
+  <div class="dialog">
+    <div>
+      <h1>The change you wanted was rejected.</h1>
+      <p>Maybe you tried to change something you didn't have access to.</p>
     </div>
-    <div id="footer">
-      <div class="footer-content center">
-        <div class="footer-copyright">© 2015 ООО <span class="quotes">«</span>Феникс<span class="quotes">»</span></div>
-          <div class="footer-adress">124460 г. Зеленоград, 2-й Западный пр-д., д. 1, стр. 1, офис 205</div>
-      </div>
-    </div>
-  </body>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
 </html>
