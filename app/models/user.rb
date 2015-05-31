@@ -9,4 +9,7 @@ class User < ActiveRecord::Base
 ############################# ДЕЙСТВИЯ ДО СОХРАНЕНИЯ ########################################
 	before_save { self.email = email.downcase }
 	before_save { self.login = login.downcase }
+
+	has_secure_password
+	validates :password, length: { minimum: 6 }
 end
