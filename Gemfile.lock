@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: 1a0192201b317d3f1bac88f5c5b4926d527b1b39
+  revision: 099aee5c5b801523135e1eb87d82f4be50648de2
   specs:
     devise (3.5.1)
       bcrypt (~> 3.0)
@@ -59,12 +59,12 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.8.2)
+    json (1.8.3)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.6.1)
-    minitest (5.6.1)
-    multi_json (1.11.0)
+    minitest (5.7.0)
+    multi_json (1.11.1)
     mysql2 (0.3.18-x86-mingw32)
     orm_adapter (0.5.0)
     rack (1.5.3)
