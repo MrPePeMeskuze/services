@@ -1,8 +1,8 @@
-<% provide(:title, 'Создание нового пользователя') %>
-<h1>Регистрация</h1>
+<% provide(:title, 'Редактирование пользователя') %>
+<h1>Редактирование пользователя <%= @user.name %></h1>
 <div class="center header">
 	<div class="contacts-block-line">
-		<%= form_for :user, :url => { :action => :create } do |f| %>
+		<%= form_for(@user) do |f| %>
 			<%= render 'shared/error_messages' %>
       		<%= f.hidden_field :save, value: 1 %>
    			<%= f.label :login, "Логин" %>
@@ -27,7 +27,7 @@
 			<%= f.password_field :password_confirmation, class: "callback" %>
 
 			<div class="btn-large">
-				<%= f.submit "Создать пользователя" %>
+				<%= f.submit "Сохранить изменения" %>
 			</div>
 		<% end %>
 	</div>

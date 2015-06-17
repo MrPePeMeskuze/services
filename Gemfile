@@ -42,3 +42,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
   gem 'devise', github: 'plataformatec/devise'
 #для heroku стилей и js
   gem 'rails_12factor', group: :production
+
+gem 'will_paginate', '3.0.5'
+
+gem 'sprockets-rails', :require => 'sprockets/railtie'

@@ -1,3 +1,6 @@
-<% provide(:title, 'Информация о пользователе sadsa.name') %>
-sadsaasd
-asdas
+<% provide(:title, 'Список пользователей') %>
+<h1>Список пользователей</h1>
+<ul class="users">
+	<%= render @users %>
+</ul>
+<%= will_paginate(:previous_label => "&#8592;Назад",:next_label => "Вперед&#8594;") %>
