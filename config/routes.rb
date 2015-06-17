@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 	get 'contacts' , to: 'static_pages#contacts'
 	get 'new' , to: 'users#new'
 	get '/signin',  to: 'sessions#new',         via: 'get'
-  	get '/signout', to: 'sessions#destroy',     via: 'destroy'
+  	match '/signout', to: 'sessions#destroy', via: 'delete'
 end

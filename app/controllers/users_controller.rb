@@ -49,7 +49,6 @@ class UsersController < ApplicationController
 
     def admin_auth 
 		if user_is_admin?
-			store_location
 			redirect_to root_url
 		end
     end
