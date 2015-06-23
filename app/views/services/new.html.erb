@@ -1,0 +1,38 @@
+<% provide(:title, 'Создание услуги') %>
+<h1>Создание услуги</h1>
+<div class="center header">
+	<div class="contacts-block-line">
+		<%= form_for :services, :url => { :action => :create }, html: { multipart: true } do |f| %>
+			<%= render 'shared/error_messages_services' %>
+      		<%= f.hidden_field :save, value: 1 %>
+
+      		<%= f.label :title, "Title" %>
+			<%= f.text_field :title, class: "callback" %>
+
+   			<%= f.label :header, "Название" %>
+			<%= f.text_field :header, class: "callback" %>
+
+			<%= f.label :body, "Описание" %>
+			<%= f.text_area :body, class: "callback-large" %>
+
+			<%= f.label :position, "Позиция" %>
+			<%= f.text_field :position, class: "callback" %>
+
+			<%= f.label :url, "URL" %>
+			<%= f.text_field :url, class: "callback" %>
+
+			<%= f.file_field :image %>
+
+			<%= label_tag(:parent_id, "Выбрать надраздел") %>
+			<%= f.select :parent_id, @parents.order(:position).map{ |service| [service.header, service.id] }.insert(0,"---") %><br /><br />
+
+			<%= label_tag(:services_is_published, "Публиковать") %>
+			<%= f.check_box(:is_published) %><br /><br />
+		    
+
+			<div class="btn-large">
+				<%= f.submit "Создать услугу" %>
+			</div>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,9 @@
+<% provide(:title, 'Список пользователей') %>
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+<h1>Список услуг</h1>
+<%= link_to raw("<span>Создание новой услуги</span>"), new_service_path, class: "image_button" %>
+<ul class="users serv_admin">
+	<%= render @services %>
+</ul>

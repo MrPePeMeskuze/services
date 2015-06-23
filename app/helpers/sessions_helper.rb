@@ -38,4 +38,10 @@ module SessionsHelper
 		session[:return_to] = request.url if request.get?
 	end
 
+	def admin_auth 
+		if user_is_admin?
+			redirect_to root_url
+		end
+    end
+
 end

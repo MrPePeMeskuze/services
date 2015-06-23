@@ -1,0 +1,41 @@
+<% provide(:title, 'Редактирование услуги') %>
+<h1>Редактирование услуги <%= @service.header %></h1>
+<div class="center header">
+	<div class="contacts-block-line">
+		<%= form_for @service, :html => {:multipart => true} do |f| %>
+			<%= render 'shared/error_messages_services' %>
+      		<%= f.hidden_field :save, value: 1 %>
+
+      		<%= f.label :title, "Title" %>
+			<%= f.text_field :title, class: "callback" %>
+
+   			<%= f.label :header, "Название" %>
+			<%= f.text_field :header, class: "callback" %>
+
+			<%= f.label :body, "Описание" %>
+			<%= f.text_area :body, class: "callback-large" %>
+
+			<%= f.label :position, "Позиция" %>
+			<%= f.text_field :position, class: "callback" %>
+
+			<%= f.label :url, "URL" %>
+			<%= f.text_field :url, class: "callback" %>
+
+			<%= f.file_field :image %>
+
+			<%= image_tag @service.image.url %>
+			<%= image_tag @service.image.url(:medium) %>
+			<%= image_tag @service.image.url(:thumb) %>
+
+			<%= label_tag(:parent_id, "Выбрать надраздел") %>
+			<%= f.select :parent_id, @parents.order(:position).map{ |service| [service.header, service.id] }.insert(0,"---") %><br /><br />
+
+			<%= label_tag(:services_is_published, "Публиковать") %>
+			<%= f.check_box(:is_published) %><br /><br />
+
+			<div class="btn-large">
+				<%= f.submit "Изменить услугу" %>
+			</div>
+		<% end %>
+	</div>
+</div>

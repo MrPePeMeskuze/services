@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 	    	render 'new'
 		end	
 	end
+	
 	def edit
 		@user = User.find_by_login(params[:id])
 	end
@@ -45,12 +46,6 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:login, :email, :password, :password_confirmation, :name, :last_name, :middle_name)
-    end
-
-    def admin_auth 
-		if user_is_admin?
-			redirect_to root_url
-		end
     end
 
 end

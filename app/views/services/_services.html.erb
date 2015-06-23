@@ -1,0 +1,17 @@
+<li>
+	<%= link_to services.header, services %>
+	| <%= link_to 'Редактировать', :action => 'edit', :id => services %>
+	<%= link_to '| Удалить', services, method: :delete, data: { confirm: 'Вы уверены?' },class: "admin_remove" %>
+
+	<% @childrens = Services.where(parent_id: services.id).order(:position) %>
+	<% if @childrens.exists? %> 
+		<div class="childrens">
+			<h3> Вложенные услуги для услуги <%= services.header %> </h3>
+			<% @childrens.each do |children| %>
+				<%= link_to children.header, children %>
+				| <%= link_to 'Редактировать', :action => 'edit', :id => children %>
+				<%= link_to '| Удалить', children, method: :delete, data: { confirm: 'Вы уверены?' } %>
+			<% end %>
+		</div>
+	<% end %>
+</li>

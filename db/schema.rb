@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150614143702) do
+ActiveRecord::Schema.define(version: 20150623143702) do
+
+  create_table "services", force: true do |t|
+    t.integer  "parent_id",          default: 0
+    t.integer  "auser_id"
+    t.boolean  "is_published"
+    t.string   "url"
+    t.string   "full_path"
+    t.string   "header"
+    t.string   "title"
+    t.text     "body"
+    t.text     "additional_body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "position"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "login"

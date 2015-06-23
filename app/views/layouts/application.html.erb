@@ -1,5 +1,32 @@
 <!DOCTYPE html>
 <html>
+	<% if current_user.try(:is_admin) %>
+		<div style="height:44px">
+			<div class="fixed-nav">
+				<div class="navbar">
+		          <div class="navbar-inner">
+		            <ul class="nav">
+		              <li><%= nav_link "Главная", root_path %></li>
+					  <li>
+							<a class="dropdown-toggle">Пользователи</a>
+							<ul class="dropdown-menu">
+								<%= nav_link "Список пользователей", users_path %>
+								<%= nav_link "Создание нового пользователя", new_user_path %>
+							</ul>
+					  </li>
+					  <li>
+							<a class="dropdown-toggle">Услуги</a>
+							<ul class="dropdown-menu">
+								<%= nav_link "Список услуг", services_path %>
+								<%= nav_link "Создание новой услуги", new_service_path %>
+							</ul>
+					  </li>
+		            </ul>
+		          </div>
+		        </div>
+		    </div>
+	    </div>
+	<% end %>
 	<%= render 'layouts/head' %>
 	<body>
 		<div id="all">

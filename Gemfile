@@ -46,3 +46,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'will_paginate', '3.0.5'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+
+gem "paperclip"

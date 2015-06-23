@@ -1,0 +1,12 @@
+<ul>
+	<% @parent.each do |parent| %>
+		<li><span><%= parent.header %><i class="rotate"></i></span>
+			<ul class="sub-menu">
+				<% @children = Services.where(parent_id: parent.id).order(:position) %>
+				<% @children.each do |children| %>
+					<li><%= nav_link children.header, children %></li>
+				<% end %>
+			</ul>
+		</li>
+	<% end %>
+</ul>

@@ -1,0 +1,12 @@
+<% provide(:title,  @service.title) %>
+<div class="main-menu">
+	<%= render 'layouts/service_navigation' %>
+</div>
+<div class="services-content">
+	<h1 class="float"><%= @service.header %></h1>
+	<div class="post-header clearfix"><a href="/calculator/">расчет стоимости</a></div>
+
+	<div class="service-inner">
+		<%= raw(@service.body) %> 
+	</div>
+</div>

@@ -6,8 +6,8 @@ $(document).ready(function(){
         $(this).next(".sub-menu").slideToggle();   
     });
     $(function () {
-		$(".sub-menu > li > .active").parent().parent().slideDown().css("display","block");
-		$(".sub-menu > li > .active").parent().parent().parent().find("span").addClass('main-menu-toggle');
+		$(".sub-menu > li.active").parent().slideDown().css("display","block");
+		$(".sub-menu > li.active").parent().parent().find("span").addClass('main-menu-toggle');
 	});
 	$(".main-white-block .main-more-info ul li a").mouseenter(function(){
       $(this).parent("li").css('color','#4d4d4d');
@@ -26,6 +26,16 @@ $(document).ready(function(){
     	$(this).children().next(".main-more-info").stop().fadeOut('fast');
     	$(this).children().children().next(".main-portfolio-hover , .opacity-block").stop().fadeOut("fast");
     });
+    $(".nav > li").mouseenter(function(){
+      $(this).addClass("open");
+    }).mouseleave(function(){
+      $(this).removeClass("open");
+    });
+    $(".serv_admin li").each(function () {
+		if($(this).find(".childrens").length){
+			$(this).find(".admin_remove").remove();
+		}
+	});
     /*fancybox*/
 /*	$(function () {
 		$(".fancybox").fancybox({
