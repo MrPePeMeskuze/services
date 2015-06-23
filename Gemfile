@@ -48,3 +48,5 @@ gem 'will_paginate', '3.0.5'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 gem "paperclip"
+
+gem "rails_serve_static_assets"
