@@ -1,17 +1,30 @@
-<li>
-	<%= link_to services.header, services %>
-	| <%= link_to 'Редактировать', :action => 'edit', :id => services %>
-	<%= link_to '| Удалить', services, method: :delete, data: { confirm: 'Вы уверены?' },class: "admin_remove" %>
-
-	<% @childrens = Services.where(parent_id: services.id).order(:position) %>
-	<% if @childrens.exists? %> 
-		<div class="childrens">
-			<h3> Вложенные услуги для услуги <%= services.header %> </h3>
-			<% @childrens.each do |children| %>
-				<%= link_to children.header, children %>
-				| <%= link_to 'Редактировать', :action => 'edit', :id => children %>
-				<%= link_to '| Удалить', children, method: :delete, data: { confirm: 'Вы уверены?' } %>
-			<% end %>
-		</div>
-	<% end %>
-</li>
+<div class="item widget sortitem">
+	<div style="float: right; font-size: 80%;">
+		<%= link_to ' Удалить', services, method: :delete, data: { confirm: 'Вы уверены?' },class: "admin_remove admin" %>
+	</div>
+	<div style="float: right; font-size: 80%;">
+		<%= link_to 'Редактировать', { action: 'edit', id: services }, class: "admin", style: "color:blue; margin-right:10px;" %>
+	</div>
+	<div class="list_title">
+		<%= link_to services.header, services %>
+	</div>
+</div>
+<% @childrens = Services.where(parent_id: services.id).order(:position) %>
+<% if @childrens.exists? %> 
+	<div class="childrens">
+		<h3> Вложенные услуги для услуги <%= services.header %> </h3>
+		<% @childrens.each do |children| %>
+			<div class="item widget sortitem">
+				<div style="float: right; font-size: 80%;">
+					<%= link_to ' Удалить', children, method: :delete, data: { confirm: 'Вы уверены?' },class: "admin_remove admin" %>
+				</div>
+				<div style="float: right; font-size: 80%;">
+					<%= link_to 'Редактировать', { action: 'edit', id: children }, class: "admin", style: "color:blue; margin-right:10px;" %>
+				</div>
+				<div class="list_title">
+					<%= link_to  children.header, children %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+<% end %>

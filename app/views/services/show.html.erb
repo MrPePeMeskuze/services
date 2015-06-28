@@ -3,8 +3,10 @@
 	<%= render 'layouts/service_navigation' %>
 </div>
 <div class="services-content">
-	<h1 class="float"><%= @service.header %></h1>
-	<div class="post-header clearfix"><a href="/calculator/">расчет стоимости</a></div>
+	<h1><%= @service.header %></h1>
+	<div class="services-img">
+		<%= image_tag(@service.image.general.url) if @service.image? %>
+	</div>
 
 	<div class="service-inner">
 		<%= raw(@service.body) %> 

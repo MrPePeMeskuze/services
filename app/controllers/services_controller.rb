@@ -7,7 +7,7 @@ class ServicesController < ApplicationController
 	end
 
 	def index
-		@services = Services.where(parent_id: 0).where(is_published: 1).order(:is_published).order(:position)
+		@services = Services.paginate(page: params[:page], per_page: 10).where(parent_id: 0).where(is_published: 1).order(:is_published).order(:position)
 	end
 
 	def new
@@ -16,6 +16,7 @@ class ServicesController < ApplicationController
 	end
 
 	def create
+		@parents = Services.where(parent_id: 0).where(is_published: 1)
 		@service = Services.new(service_params)
 		@service.auser_id = current_user.id
 	    if @service.save
@@ -32,6 +33,7 @@ class ServicesController < ApplicationController
 	end
 
 	def update
+		@parents = Services.where(parent_id: 0).where(is_published: 1)
 		@service = Services.find_by_url(params[:id])
 		if @service.update_attributes(service_params)
 			flash[:success] = "Услуга успешно отредактированна"

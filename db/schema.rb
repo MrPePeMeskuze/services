@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20150623143702) do
 
   create_table "services", force: true do |t|
-    t.integer  "parent_id",          default: 0
+    t.integer  "parent_id",       default: 0
     t.integer  "auser_id"
     t.boolean  "is_published"
     t.string   "url"
@@ -26,10 +26,7 @@ ActiveRecord::Schema.define(version: 20150623143702) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.string   "image"
   end
 
   create_table "users", force: true do |t|

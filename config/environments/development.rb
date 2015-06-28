@@ -8,7 +8,6 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
-
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
@@ -31,9 +30,18 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+    ActionMailer::Base.smtp_settings = {  
+        address:              'smtp.gmail.com',
+        port:                 587,
+        domain:               "gmail.com", 
+        user_name:            'predatorqwerty2@gmail.com',
+        password:             'predator69',
+        authentication:       'login',
+        enable_starttls_auto: true  
+    }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

@@ -2,21 +2,26 @@
 <div class="main-services clearfix">
 	<h1 class="line">
 		<a href>Услуги</a>
-	</h1>							
-	<div class="main-white-block">
-		<a href><img src /></a>
-		<div class="main-more-info">
-			<ul>
-				<li><a href></a></li>
-			</ul>
+	</h1>
+	<% @services.each do |service| %>							
+		<div class="main-service">
+			<a href><%= image_tag(service.image.general_thumb.url) if service.image? %></a>
+			<div class="main-more-info">
+				<ul>
+					<% @childrens = Services.where(parent_id: service.id).order(:position) %>
+					<% @childrens.each do |children| %>
+						<li><%= link_to children.header, children %></li>
+					<% end %>
+				</ul>
+			</div>
+			<h2 class="addpadding"><%= service.header %></h2>
 		</div>
-		<h2 class="addpadding">Название</h2>
-	</div>
+	<% end %>
 </div>
 
 <div class="main-news">
 	<h1 class="line">
-		<a href>Новости</a>
+		<%= link_to "Новости", news_path %>
 	</h1>
 	<div class="main-news-content clearfix">
 		<a href class="float"><img src="" alt=""></a>	
@@ -38,7 +43,7 @@
 </div>
 
 <div class="main-about">
-	<h1 class="line">О компании</h1>
+	<h1 class="line"><%= link_to "О компании", about_path %></h1>
 	<img src="/images/about-general.png" alt="О компании" style="float:left;">
 
 	<div class="main-info-block">

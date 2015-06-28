@@ -1,11 +1,11 @@
 class AddImageColumnsToServices < ActiveRecord::Migration 
   def self.up     
     change_table :services do |t|  
-      t.has_attached_file :image     
+      t.string :image     
     end 
   end 
    
   def self.down   
-    drop_attached_file :services, :image   
+    drop_collumn :services, :image   
   end 
 end
