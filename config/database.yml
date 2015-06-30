@@ -1,11 +1,11 @@
 production:
-  adapter: mysql2
-  encoding: utf8
-  database: services
-  pool: 5
-  username: root
-  password:
-  host: 127.0.0.1
+ adapter: mysql2
+ database: mrpepeme_stroy33
+ username: mrpepeme_stroy33
+ password: Beater69
+ host: mysq6locum.ru
+ encoding: utf8
+
 development:
   adapter: mysql2
   encoding: utf8
