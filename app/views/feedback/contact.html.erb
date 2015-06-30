@@ -1,9 +1,9 @@
-Hi!
+Письмо от: <%= @fio%> <br />
+Электронный адрес: <%= @email %><br /><br />
 
-You are having one email message from <%= @email %> <%= @fio%> with a phone 
+Контактный номер телефона: <%= @phone %><br /><br />
 
-<%= @phone %>
-and following is the message:
-<%= @body %>
+Сообщение: <br />
+	<%= @body %> <br /><br />
 
-Thanks
+Сообщение отправлено: <%= Time.now %>

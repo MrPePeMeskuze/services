@@ -1,7 +1,7 @@
 <% provide(:title, 'Главная') %>
 <div class="main-services clearfix">
 	<h1 class="line">
-		<a href>Услуги</a>
+		<%= link_to "Услуги", services_path %>
 	</h1>
 	<% @services.each do |service| %>							
 		<div class="main-service">

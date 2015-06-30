@@ -21,7 +21,7 @@ class ServicesController < ApplicationController
 		@service.auser_id = current_user.id
 	    if @service.save
 	    	flash[:success] = "Услуга успешно создана!"
-	      	redirect_to services_path
+	      	redirect_to admin_services_path
 	    else
 	    	render 'new'
 		end	
@@ -37,7 +37,7 @@ class ServicesController < ApplicationController
 		@service = Services.find_by_url(params[:id])
 		if @service.update_attributes(service_params)
 			flash[:success] = "Услуга успешно отредактированна"
-			redirect_to services_path
+			redirect_to admin_services_path
 		else
 			render 'edit'
 		end
@@ -46,7 +46,7 @@ class ServicesController < ApplicationController
 	def destroy
 			Services.find_by_url(params[:id]).destroy
 			flash[:success] = "Услуга успешно удалена!"
-			redirect_to services_path
+			redirect_to admin_services_path
 	end
 
 	private

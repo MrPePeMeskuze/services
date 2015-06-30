@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	resources :services
+	resources :services,  only: [:show, :edit, :new, :update, :destroy]
 	resources :users
 	resources :static_pages
 	resources :sessions, only: [:new, :create, :destroy]
@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 	get 'about' , to: 'static_pages#about'
 	get 'contacts' , to: 'static_pages#contacts'
 	get 'admin_services' , to: 'services#index'
-	get 'catalog' , to: 'static_pages#services'
+	get 'services' , to: 'static_pages#services'
 	get 'news' , to: 'static_pages#news'
 	get 'portfolio' , to: 'static_pages#portfolio'
 	post'sendmail' , to: 'static_pages#sendmail'

@@ -118,6 +118,10 @@ ul{
 .authorization{
     float:right;
 }
+.logo{
+    position: relative;
+    top: -8px;
+}
 .logon{
     font-size:16px;
     height:30px;
@@ -339,13 +343,15 @@ h1 a:hover{
 .main-more-info{
     background: #5777DA;
     height: 250px;
-    width: 600px;
-    z-index: 20;
+    width: 500px;
     position: absolute;
     color: white;
-    margin-top: -254px;
-    display:none;
-    right:-200px;
+    visibility:hidden;
+    right:-100px;
+    top: 0px;
+    moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
 }
 .main-more-info:before {
     right: 100%;
@@ -1399,4 +1405,10 @@ label.checkbox{
 .delete-button {
   font-size: 70%;
   color: #666;
+}
+.arrow-animate{
+    -webkit-transform: translate(-100px,0);
+    -moz-transform: translate(-100px,0);
+    -o-transform: translate(-100px,0);
+    visibility: visible;
 }

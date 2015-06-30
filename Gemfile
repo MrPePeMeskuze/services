@@ -54,3 +54,13 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'actionmailer'
+
+group :development do
+  gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
+end
+
+platforms :ruby do # linux
+
+  gem 'unicorn'
+
+end

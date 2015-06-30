@@ -5,6 +5,7 @@ $(document).ready(function(){
         $(this).toggleClass('main-menu-toggle');   
         $(this).next(".sub-menu").slideToggle();   
     });
+
     $(function () {
 		$(".sub-menu > li.active").parent().slideDown().css("display","block");
 		$(".sub-menu > li.active").parent().parent().find("span").addClass('main-menu-toggle');
@@ -12,10 +13,10 @@ $(document).ready(function(){
 
 	$('.main-service').hover(
 		function(){ 
-		$(this).find(".main-more-info").css({display:'block'}).stop().animate({'right':'0'},400);
+			$(this).find(".main-more-info").stop().addClass("arrow-animate");
 		},
 		function(){ 
-		$(this).find(".main-more-info").css({display:'none'}).stop().animate({'right':'-400'},400);  
+		$(this).find(".main-more-info").stop().removeClass("arrow-animate");  
 	});
 
 	$(".main-white-block .main-more-info ul li a").mouseenter(function(){
@@ -30,8 +31,8 @@ $(document).ready(function(){
       $(this).removeClass("open");
     });
 
-    $(".serv_admin li").each(function () {
-		if($(this).find(".childrens").length){
+    $(".item").each(function(){
+		if($(this).next(".childrens").length){
 			$(this).find(".admin_remove").remove();
 		}
 	});
