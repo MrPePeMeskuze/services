@@ -56,7 +56,10 @@ gem 'mini_magick'
 gem 'actionmailer'
 
 group :development do
-  gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
+	gem 'capistrano'
+	gem 'capistrano-rails'
+	gem 'capistrano-bundler'
+	gem 'capistrano-rvm'
 end
 
 platforms :ruby do # linux
