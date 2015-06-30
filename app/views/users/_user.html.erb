@@ -1,0 +1,6 @@
+<li>
+  <%= gravatar_for user %>
+  <%= link_to user.login, user %>
+  | <%= link_to 'Редактировать', :action => 'edit', :id => user %>
+  | <%= link_to 'Удалить', user, method: :delete, data: { confirm: 'Вы уверены?' } %>
+</li>

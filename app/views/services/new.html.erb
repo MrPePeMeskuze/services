@@ -1,0 +1,16 @@
+<% provide(:title, 'Создание услуги') %>
+<h1>Создание услуги</h1>
+<div id="common clearfix">
+	<div id="left">
+		<%= form_for :services, :url => { :action => :create }, class: "ajaxform", html: { multipart: true } do |f| %>
+			<% render :partial =>'services/form', :locals => {:f => f} %>
+		<% end %>
+		<div class="clear"></div>
+	</div>
+	<div id="right">
+		<div id="button_to_add_new" class="button_to_add_new">
+			<%= link_to raw("<span>Создание новой услуги</span>"), new_service_path, class: "image_button" %>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>

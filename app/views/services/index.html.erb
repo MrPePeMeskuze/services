@@ -1,0 +1,21 @@
+<% provide(:title, 'Список услуг') %>
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+<h1>Список услуг</h1>
+<div id="common clearfix">
+	<div id="left">
+		<div class="inner">
+			<div id="objects" class="list ui-sortable">
+				<%= render @services %>
+			</div>
+		</div>
+		<%= will_paginate(:previous_label => "&#8592;Назад",:next_label => "Вперед&#8594;") %>
+		<div class="clear"></div>
+	</div>
+	<div id="right">
+		<div id="button_to_add_new" class="button_to_add_new">
+			<%= link_to raw("<span>Создание новой услуги</span>"), new_service_path, class: "image_button" %>
+		</div>
+	</div>
+</div>

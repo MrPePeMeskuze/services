@@ -1,0 +1,18 @@
+<div class="authorization">
+	<% if signed_in? %>
+		Здравствуйте, <%= current_user.name %>&nbsp &nbsp &nbsp
+		<%= link_to "Выйти", signout_path, method: "delete", class: "btn" %>
+	<% else %>
+		<%= form_for(:session, url: sessions_path) do |f| %>
+		<% flash.each do |key, value| %>
+		    <div class="alert-<%= key %>"></div>
+		<% end %>
+	      <%= f.label :Логин %>
+	      <%= f.text_field :login, placeholder:"Логин", class: "logon"%>
+
+	      <%= f.label :Пароль %>
+	      <%= f.password_field :password, placeholder:"Пароль", class: "logon" %>
+	      <%= f.submit "Войти", class: "btn" %>
+	    <% end %>
+	<% end %>
+</div>

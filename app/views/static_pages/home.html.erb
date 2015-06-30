@@ -1,0 +1,55 @@
+<% provide(:title, 'Главная') %>
+<div class="main-services clearfix">
+	<h1 class="line">
+		<%= link_to "Услуги", services_path %>
+	</h1>
+	<% @services.each do |service| %>							
+		<div class="main-service">
+			<a href><%= image_tag(service.image.general_thumb.url) if service.image? %></a>
+			<div class="main-more-info">
+				<ul>
+					<% @childrens = Services.where(parent_id: service.id).order(:position) %>
+					<% @childrens.each do |children| %>
+						<li><%= link_to children.header, children %></li>
+					<% end %>
+				</ul>
+			</div>
+			<h2 class="addpadding"><%= service.header %></h2>
+		</div>
+	<% end %>
+</div>
+
+<div class="main-news">
+	<h1 class="line">
+		<%= link_to "Новости", news_path %>
+	</h1>
+	<div class="main-news-content clearfix">
+		<a href class="float"><img src="" alt=""></a>	
+		<div class="main-info-block">
+			<h2 class="main-info-header">
+				<a href>Заголовок новости</a>
+			</h2>
+			<div class="main-info-date">
+				11.12.1111
+			</div>
+			<p>
+				ыфвыфвыфвывывыфвыфвыфвыв
+			</p>
+			<div class="main-info-more">
+				<a href>Подробнее</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="main-about">
+	<h1 class="line"><%= link_to "О компании", about_path %></h1>
+	<img src="/images/about-general.png" alt="О компании" style="float:left;">
+
+	<div class="main-info-block">
+		<h2 class="main-info-header">Заголовок о</h2>
+		<p class="float">
+			ыфвыфвыфвыв фывыф
+		</p>
+	</div>
+</div>
