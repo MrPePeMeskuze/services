@@ -106,6 +106,6 @@ namespace :deploy do
     run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
   end
 
-  set :shared_children, %w(public/uploads public/images)
-
+  set :shared_children, %w(public/uploads public/images log)
+  forwarded_agent = true
 end
