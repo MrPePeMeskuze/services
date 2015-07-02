@@ -107,5 +107,5 @@ namespace :deploy do
   end
 
   set :shared_children, %w(public/uploads public/images log)
-  forwarded_agent = true
+  set :ssh_options, { :forward_agent => false }
 end
