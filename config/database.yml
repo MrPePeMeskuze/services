@@ -3,7 +3,7 @@ production:
  database: mrpepeme_stroy33
  username: mrpepeme_stroy33
  password: Beater69
- host: mysq6.locum.ru
+ host: mysql6.locum.ru
  encoding: utf8
 
 development:
