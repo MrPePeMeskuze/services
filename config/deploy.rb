@@ -105,4 +105,7 @@ namespace :deploy do
   task :restart, :roles => :app do
     run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
   end
+
+  set :shared_children, %w(public/uploads public/images log)
+  set :ssh_options, { :forward_agent => false }
 end
