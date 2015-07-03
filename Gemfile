@@ -55,10 +55,7 @@ gem 'mini_magick'
 
 gem 'actionmailer'
 
-group :development do
   gem 'capistrano', '~> 2.15.5'
-  #other development gems...
-end
 
 group :production do # linux
   gem 'unicorn'

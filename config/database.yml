@@ -1,10 +1,10 @@
-#production:
-# adapter: mysql2
-# database: mrpepeme_stroy33
-# username: mrpepeme_stroy33
-# password: Beater69
-# host: mysq6.locum.ru
-# encoding: utf8
+production:
+ adapter: mysql2
+ database: mrpepeme_stroy33
+ username: mrpepeme_stroy33
+ password: Beater69
+ host: mysq6.locum.ru
+ encoding: utf8
 
 development:
   adapter: mysql2
