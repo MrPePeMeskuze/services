@@ -41,6 +41,7 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.10)
+    bcrypt (3.1.10-x86-mingw32)
     builder (3.2.2)
     capistrano (2.15.5)
       highline
@@ -80,6 +81,7 @@ GEM
     minitest (5.7.0)
     multi_json (1.11.1)
     mysql2 (0.3.18)
+    mysql2 (0.3.18-x86-mingw32)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -160,7 +162,7 @@ PLATFORMS
 
 DEPENDENCIES
   actionmailer
-  bcrypt (~> 3.1.7)
+  bcrypt
   capistrano (~> 2.15.5)
   carrierwave
   coffee-rails (~> 4.0.0)
