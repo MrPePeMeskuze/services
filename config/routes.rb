@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	resources :services,  only: [:show, :edit, :new, :update, :destroy]
+	resources :services,  only: [:show, :edit, :new, :update,:create, :destroy]
 	resources :users
 	resources :static_pages
 	resources :sessions, only: [:new, :create, :destroy]
