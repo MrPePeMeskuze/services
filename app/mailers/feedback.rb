@@ -5,6 +5,6 @@ class Feedback < ActionMailer::Base
         @email = email
         @phone = phone
         @body = body
-        mail :to => 'predatorqwerty2@gmail.com', :from => email, :subject => "Письмо с сайта" 
+        mail :to => 'antipovstroy@gmail.com', :from => email, :subject => "Письмо с сайта" 
     end
 end
