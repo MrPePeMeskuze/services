@@ -13,6 +13,5 @@ Rails.application.routes.draw do
 	get 'portfolio' , to: 'static_pages#portfolio'
 	post'sendmail' , to: 'static_pages#sendmail'
 	get 'new' , to: 'users#new'
-	get '/signin',  to: 'sessions#new',         via: 'get'
   	match '/signout', to: 'sessions#destroy', via: 'delete'
 end
