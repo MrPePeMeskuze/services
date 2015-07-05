@@ -19,7 +19,8 @@ h1{
     color:#5777DA;
     text-transform:uppercase;
 }
-h2{
+h2,
+h3{
     font-size:24px;
     font-family: 'Roboto Condensed' !important;
     font-style: normal;
@@ -27,7 +28,8 @@ h2{
     text-transform:uppercase;
     color:#4d4d4d;
 }
-h2 a{
+h2 a,
+h3 a{
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 700;
@@ -45,7 +47,15 @@ ul{
    list-style-type:square; 
    margin-left:20px;
 }
-
+.main-news h2 a,
+.main-about h2 a{
+    font-family: 'Roboto Condensed' !important;
+    font-style: normal;
+    font-weight: 700;
+    font-size:32px;
+    color:#5777DA;
+    text-transform:uppercase;
+}
 #all{
 	height: auto!important;
     height: 100%;
@@ -266,6 +276,9 @@ h1 a:hover{
 .main-news-content{
     margin-bottom:40px;
 }
+.main-news-content img{
+    padding-top:3px;
+}
 .main-services,
 .services-content{
     border-radius:4px;
@@ -399,18 +412,23 @@ ul a:hover{
 }
 .main-info-block{
     float:right;
-    height:210px;
+    height:230px;
     width:590px;
     background:white;
     padding:40px;
+    padding-top:30px;
 }
 .main-info-block p{
     clear:left;
+    line-height: 22px;
+}
+.main-info-block p > b > a{
+    color:black;
 }
 .main-info-header{
     float:left;
     letter-spacing:1px;
-    margin-bottom:20px;
+    margin-bottom:15px;
 }
 .main-info-date{
     font-family: 'Tahoma Regular', sans-serif;
@@ -436,6 +454,7 @@ p{
 .main-info-more{
     float:left;
     padding-top:20px;
+    clear:both;
 }
 .main-news-info-block{
     float:left;

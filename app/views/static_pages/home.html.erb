@@ -20,36 +20,42 @@
 </div>
 
 <div class="main-news">
-	<h1 class="line">
+	<h2 class="line">
 		<%= link_to "Новости", news_path %>
-	</h1>
+	</h2>
 	<div class="main-news-content clearfix">
-		<a href class="float"><img src="" alt=""></a>	
+		<%= link_to image_tag("open.png", width: 290, height:290), news_path, class: "float" %>	
 		<div class="main-info-block">
-			<h2 class="main-info-header">
-				<a href>Заголовок новости</a>
-			</h2>
+			<h3 class="main-info-header">
+				<%= link_to "Мы открылись!", news_path %>
+			</h3>
 			<div class="main-info-date">
-				11.12.1111
+				05.07.2015
 			</div>
 			<p>
-				ыфвыфвыфвывывыфвыфвыфвыв
+				<b>Дорогие друзья!</b><br />
+				Мы рады сообщить Вам об открытии официального сайта нашей компании!<br />
+				Сайт пока находится на этапе наполнения, но в самое ближайшее время мы постараемся разместить на нем всю информацию о предоставляемых нами услугах и всегда поддерживать их в актуальном состоянии! <br />
+				Если Вы не нашли интересующей Вас информации просто позвоните по телефону <b>8 916 963-97-06</b> или воспользуйтесь <b><%= link_to "формой", contacts_path(@contacts, :anchor => "contacts") %></b> обратной связи!
 			</p>
 			<div class="main-info-more">
-				<a href>Подробнее</a>
+				<%= link_to "Подробнее", news_path %>
 			</div>
 		</div>
 	</div>
 </div>
 
 <div class="main-about">
-	<h1 class="line"><%= link_to "О компании", about_path %></h1>
-	<img src="/images/about-general.png" alt="О компании" style="float:left;">
+	<h2 class="line"><%= link_to "О компании", about_path %></h2>
+	<%= link_to image_tag("about-general.png", alt: "О компании"), about_path, class: "float" %>
 
 	<div class="main-info-block">
-		<h2 class="main-info-header">Заголовок о</h2>
+		<h3 class="main-info-header"><%= link_to "О компании", about_path %></h3>
 		<p class="float">
-			ыфвыфвыфвыв фывыф
+			
 		</p>
+		<div class="main-info-more">
+			<%= link_to "Подробнее", about_path %>
+		</div>
 	</div>
 </div>
