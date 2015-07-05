@@ -1,2 +1,4 @@
-<input type="text" placeholder="Поиск" class="search" />
+<%= form_tag search_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Поиск", class: "search" %>
+<% end %>
 		

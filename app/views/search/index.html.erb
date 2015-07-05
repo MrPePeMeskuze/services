@@ -1,0 +1,28 @@
+<% provide(:title, "Поиск по запросу " + params[:search] ) %> 
+<% if @search.exists? %> 
+	<div class="main-news-content clearfix">
+		<div class="main-news-info-block">
+			<div class="search-lable">Результаты поиска: <b> <%= params[:search] %></b></div>
+			<div class="main-info-body">Найдено результатов: <b><%= @search.count %> </b></div>
+		</div>
+	</div>
+	<div class="main-news-content clearfix">
+		<div class="main-news-info-block search-query">
+			<% @search.each do |search| %>
+					<h2><%= link_to search.header, search %></h2>
+					<p>
+						<%= raw(search.body)[0..300]  %> 
+					</p>
+					<hr>
+			<% end %>
+		</div>
+	</div>
+	<div class="margin"></div>
+<% else %>
+	<div class="main-news-content clearfix">
+		<div class="main-news-info-block">
+			<div class="search-lable">Результаты поиска: <b>params[:search]</b></div>
+			<div class="main-info-body">Найдено результатов: <b>0</b></div>
+		</div>
+	</div>
+<% end %>

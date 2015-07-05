@@ -655,6 +655,9 @@ p{
     text-transform: none;
     text-align: left;
 }
+.search-query p{
+    padding-top:10px;
+}
 .main-info-body,
 .main-info-body b{
     font-family: 'Roboto', 'Arial', sans-serif;
