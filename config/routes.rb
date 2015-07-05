@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 	get 'services' , to: 'static_pages#services'
 	get 'news' , to: 'static_pages#news'
 	get 'portfolio' , to: 'static_pages#portfolio'
+	get 'search' , to: 'search#index'
 	post'sendmail' , to: 'static_pages#sendmail'
 	get 'new' , to: 'users#new'
   	match '/signout', to: 'sessions#destroy', via: 'delete'
