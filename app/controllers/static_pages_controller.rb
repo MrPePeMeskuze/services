@@ -21,13 +21,18 @@ class StaticPagesController < ApplicationController
   end
 
   def sendmail
-    fio = params[:fio]
-    email = params[:email]
-    phone = params[:phone]
-    body = params[:body]
-    Feedback.contact(fio, email, phone, body).deliver
-    flash[:success] = "Сообщение успешно отправлено!"
-    redirect_to contacts_path
+    if params[:email].empty? or params[:fio].empty? or params[:body].empty?
+      flash[:error] = "Не все поля заполненны!"
+      redirect_to :back
+    else
+      fio = params[:fio]
+      email = params[:email]
+      phone = params[:phone]
+      body = params[:body]
+      Feedback.contact(fio, email, phone, body).deliver
+      flash[:success] = "Сообщение успешно отправлено!"
+      redirect_to contacts_path
+    end
   end
   
 end
