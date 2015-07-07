@@ -19,7 +19,7 @@
 	<% end %>
 </div>
 
-<div class="main-news">
+<div class="main-news clearfix">
 	<h2 class="line">
 		<%= link_to "Новости", news_path %>
 	</h2>
@@ -45,9 +45,9 @@
 	</div>
 </div>
 
-<div class="main-about">
+<div class="main-about clearfix">
 	<h2 class="line"><%= link_to "О компании", about_path %></h2>
-	<%= link_to image_tag("about-general.png", alt: "О компании"), about_path, class: "float" %>
+	<%= link_to image_tag("about_company.png", alt: "О компании", width: 290, height:290), about_path, class: "float" %>
 
 	<div class="main-info-block">
 		<h3 class="main-info-header"><%= link_to "О компании", about_path %></h3>

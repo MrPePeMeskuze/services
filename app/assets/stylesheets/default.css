@@ -276,7 +276,8 @@ h1 a:hover{
 .main-news-content{
     margin-bottom:40px;
 }
-.main-news-content img{
+.main-news-content img,
+.main-about img{
     padding-top:10px;
 }
 .main-services,
