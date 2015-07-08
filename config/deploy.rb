@@ -53,7 +53,8 @@ set :deploy_server,   "calcium.locum.ru"
 
 # Не включать в поставку разработческие инструменты и пакеты тестирования.
 set :bundle_without,  [:development, :test]
-set :assets_roles, [:web, :app] 
+set :assets_role, [:web, :app, :worker]
+
 set :user,            "hosting_mrpepemeskyze"
 set :login,           "mrpepemeskyze"
 set :use_sudo,        false
