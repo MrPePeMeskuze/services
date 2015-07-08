@@ -25,13 +25,12 @@ Rails.application.configure do
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   config.assets.css_compressor = :sass
-  set :precompile_cmd, "bundle exec rake RAILS_ENV=production RAILS_GROUPS=assets assets:precompile"
+
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
-  config.assets.precompile += %w[default.css default.js]
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
@@ -66,7 +65,6 @@ Rails.application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
-  config.assets.version = '1.0'
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
