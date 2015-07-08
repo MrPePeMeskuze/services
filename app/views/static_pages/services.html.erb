@@ -5,7 +5,7 @@
 	</h1>
 	<% @services.each do |service| %>							
 		<div class="main-service">
-			<%= image_tag(service.image.general_thumb.url) if service.image? %>
+			<%= link_to image_tag(service.image.general_thumb.url), service if service.image? %>
 			<div class="main-more-info">
 				<ul>
 					<% @childrens = Services.where(parent_id: service.id).order(:position) %>
@@ -14,7 +14,7 @@
 					<% end %>
 				</ul>
 			</div>
-			<h2 class="addpadding"><%=link_to service.header, service %></h2>
+			<h2 class="addpadding"><%= service.header %></h2>
 		</div>
 	<% end %>
 </div>
