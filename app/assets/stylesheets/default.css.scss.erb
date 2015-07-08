@@ -564,7 +564,7 @@ p{
     position:relative;
 }
 .rotate{
-    background-image: url("./arrow_down.png");
+    background-image: url(<%= asset_path 'arrow_down.png' %>));
     background-repeat: no-repeat;
     width: 18px;
     height: 10px;
@@ -586,7 +586,7 @@ p{
     }
 }
 .main-menu-toggle .rotate{
-    background-image: url("./arrow_up.png");
+    background-image: url(<%= asset_path 'arrow_up.png' %>);
     background-repeat: no-repeat;
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -1267,7 +1267,7 @@ a.image_button:link, a.image_button:visited, a.image_button:hover {
   background-color: transparent;
   background-position: left top;
   background-repeat: no-repeat;
-  background: #fff url('images/button-bg.png') bottom repeat-x;
+  background: #fff url(<%= asset_path 'button-bg.png' %>) bottom repeat-x;
   border: 3px solid #c8c8c8;
   cursor: pointer;
 }
