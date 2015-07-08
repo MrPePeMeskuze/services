@@ -156,6 +156,7 @@ ul{
     padding-bottom:6px;
     border:none;
     display: inline-block;
+    -webkit-appearance: none;
 }
 .btn:hover {
     background: #eb8b38;
@@ -294,18 +295,23 @@ h1 a:hover{
     position:relative;
 }
 .main-service h2{
-  font-size: 40px;
+  font-size: 33px;
   font-family: 'Roboto Condensed' !important;
   font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
   position: relative;
-  top: -154px;
-  left: 448px;
+  top: -149px;
+  left: 355px;
+  padding:0px;
+  max-width: 472px;
+  display: block;
+  text-align: center;
   z-index: 19;
-  color: #5777DA;
-  display: inline;
+  background-image: url("./background.png");
+    color: black;
 }
+
 .main-white-block.main-services:last-child{
     margin-bottom:0px;
 }
@@ -363,6 +369,7 @@ h1 a:hover{
     visibility:hidden;
     right:-100px;
     top: 0px;
+    z-index: 20;
     moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
@@ -800,9 +807,7 @@ hr{
     height:240px;
     padding-top:10px;
 }
-.btn-large input,
-.btn-send,
-.btn-notsend input{
+.btn-large input{
     background: #5777DA;
     text-align: center;
     border-radius: 2px;
@@ -812,10 +817,9 @@ hr{
     padding-top: 22px;
     padding-bottom: 20px;
     padding-right: 11px;
+    -webkit-appearance: none;
 }
-.btn-large input,
-.btn-notsend input,
-.btn-send{
+.btn-large input{
     text-decoration: none;
     font-weight: bold;
     font-family: 'Roboto', 'Arial', sans-serif;
@@ -823,18 +827,6 @@ hr{
     color: white;
     border: none;
     cursor:pointer;
-}
-.btn-send{
-    background: #a1d19f;
-    margin-top:50px;
-    width: 388px;
-    cursor:default;
-}
-.btn-notsend input{ 
-    background: #dda2a4;
-}
-.field_with_errors input{
-    background:#ecdade;
 }
 .btn-large input:hover{
     background: #7089EC;
