@@ -308,7 +308,7 @@ h1 a:hover{
   display: block;
   text-align: center;
   z-index: 19;
-  background-image: url("./back.png");
+  background: rgba(182, 173, 173, 1);
     color: black;
 }
 
