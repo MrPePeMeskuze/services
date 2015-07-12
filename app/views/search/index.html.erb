@@ -9,7 +9,7 @@
 	<div class="main-news-content clearfix">
 		<div class="main-news-info-block search-query">
 			<% @search.each do |search| %>
-					<h2><%= link_to search.header, search %></h2>
+					<h2><%= link_to search.header, search.full_path %></h2>
 					<p>
 						<%= raw(search.body)[0..300]  %> 
 					</p>

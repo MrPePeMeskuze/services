@@ -4,7 +4,7 @@
 			<ul class="sub-menu">
 				<% @children = Services.where(parent_id: parent.id).order(:position) %>
 				<% @children.each do |children| %>
-					<li><%= nav_link children.header, children %></li>
+					<li><%= nav_link children.header, children.full_path %></li>
 				<% end %>
 			</ul>
 		</li>

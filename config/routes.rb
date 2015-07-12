@@ -15,4 +15,5 @@ Rails.application.routes.draw do
 	post'sendmail' , to: 'static_pages#sendmail'
 	get 'new' , to: 'users#new'
   	match '/signout', to: 'sessions#destroy', via: 'delete'
+  	get 'services/*service', to: 'services#show'
 end

@@ -3,10 +3,10 @@
 		<%= link_to ' Удалить', services, method: :delete, data: { confirm: 'Вы уверены?' },class: "admin_remove admin" %>
 	</div>
 	<div style="float: right; font-size: 80%;">
-		<%= link_to 'Редактировать', { action: 'edit', id: services }, class: "admin", style: "color:blue; margin-right:10px;" %>
+		<%= link_to 'Редактировать', { action: 'edit', id: services.url }, class: "admin", style: "color:blue; margin-right:10px;" %>
 	</div>
 	<div class="list_title">
-		<%= link_to services.header, services %>
+		<%= link_to services.header, services.full_path %>
 	</div>
 </div>
 <% @childrens = Services.where(parent_id: services.id).order(:position) %>
@@ -19,10 +19,10 @@
 					<%= link_to ' Удалить', children, method: :delete, data: { confirm: 'Вы уверены?' },class: "admin_remove admin" %>
 				</div>
 				<div style="float: right; font-size: 80%;">
-					<%= link_to 'Редактировать', { action: 'edit', id: children }, class: "admin", style: "color:blue; margin-right:10px;" %>
+					<%= link_to 'Редактировать', { action: 'edit', id: children.url }, class: "admin", style: "color:blue; margin-right:10px;" %>
 				</div>
 				<div class="list_title">
-					<%= link_to  children.header, children %>
+					<%= link_to children.header, children.full_path %>
 				</div>
 			</div>
 		<% end %>

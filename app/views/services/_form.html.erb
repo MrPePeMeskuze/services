@@ -20,6 +20,12 @@
 		</div>
 	</div>
 	<div class="input">
+		<%= f.label :full_path, raw("<div class='req'>&#10039;</div>Полный путь") %>
+		<div style="position: relative;">
+			<%= f.text_field :full_path, class: "w" %>
+		</div>
+	</div>
+	<div class="input">
 		<%= f.label :header, raw("<div class='req'>&#10039;</div>Заголовок страницы") %>
 		<%= f.text_field :header, class: "w" %>
 	</div>

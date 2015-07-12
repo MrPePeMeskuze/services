@@ -5,12 +5,12 @@
 	</h1>
 	<% @services.each do |service| %>							
 		<div class="main-service">
-			<%= link_to image_tag(service.image.general_thumb.url), service if service.image? %>
+			<%= link_to image_tag(service.image.general_thumb.url), service.full_path if service.image? %>
 			<div class="main-more-info">
 				<ul>
 					<% @childrens = Services.where(parent_id: service.id).order(:position) %>
 					<% @childrens.each do |children| %>
-						<li><%= link_to children.header, children %></li>
+						<li><%= link_to children.header, children.full_path %></li>
 					<% end %>
 				</ul>
 			</div>
