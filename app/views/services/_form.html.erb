@@ -9,7 +9,7 @@
 	<% if  @service.parent_id != 0 or @service.id.nil? %>
 		<div class="input" style="width: 30%;">
 			<%= label_tag(:parent_id, "Родительский раздел") %>
-			<%= f.select :parent_id, @parents.order(:position).map{ |service| [service.header, service.id] }.insert(0,"---"), class: "w" %>
+			<%= f.select :parent_id, @parents.order(:position).map{ |service| [service.header, service.id] }.insert(0,0), class: "w" %>
 		</div>
 	<% end %>
 
@@ -17,12 +17,6 @@
 		<%= f.label :url, raw("<div class='req'>&#10039;</div>Путь") %>
 		<div style="position: relative;">
 			<%= f.text_field :url, class: "w" %>
-		</div>
-	</div>
-	<div class="input">
-		<%= f.label :full_path, raw("<div class='req'>&#10039;</div>Полный путь") %>
-		<div style="position: relative;">
-			<%= f.text_field :full_path, class: "w" %>
 		</div>
 	</div>
 	<div class="input">
