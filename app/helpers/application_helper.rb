@@ -1,11 +1,11 @@
 module ApplicationHelper
 
   def full_title(page_title)
-    standart_title = 'Секреты Стройки" - cтроительные услуги.'
+    standart_title = '"Секреты Стройки" - cтроительные услуги.'
     if page_title.empty?
       standart_title
     else
-      standart_title + &nbsp + "#{page_title}"
+      "#{page_title}"
     end
   end
 	def nav_link(link_text, link_path)
