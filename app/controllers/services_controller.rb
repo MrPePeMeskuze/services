@@ -19,8 +19,8 @@ class ServicesController < ApplicationController
 		@parents = Services.where(parent_id: 0).where(is_published: 1)
 		@service = Services.new(service_params)
 		@service.auser_id = current_user.id
-		if params[:services][:parent_id] == 0 
-			@service.full_path="/services"+@service.url
+		if params[:services][:parent_id] == '0'
+			@service.full_path="/services/"+@service.url
 		else
 			@parent= Services.find(params[:services][:parent_id])
 			@service.full_path=@parent.full_path+"/"+params[:services][:url]
@@ -42,7 +42,7 @@ class ServicesController < ApplicationController
 		@parents = Services.where(parent_id: 0).where(is_published: 1)
 		@service = Services.find_by_url(params[:id])
 		@service.auser_id=current_user.id
-		if params[:services][:parent_id].equal?(0) or params[:services][:parent_id] == nil
+		if params[:services][:parent_id] == '0' or params[:services][:parent_id] == nil
 			@service.full_path="/services/"+@service.url
 		else
 			@parent= Services.find(params[:services][:parent_id])
