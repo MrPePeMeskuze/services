@@ -1,7 +1,0 @@
-<% provide(:title,  @user.login) %>
-<% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>"><%= value %></div>
-<% end %>
-<h1><%= @user.login %></h1>
-<%= gravatar_for @user %>
-<%= @user.login %>, <%= @user.email %>
